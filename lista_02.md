@@ -42,13 +42,13 @@ Qual das seguintes alternativas melhor descreve o que o código faz?
 
 A) O código avalia a expressão booleana, imprime o resultado `false`, calcula a soma dos números de 1 a 5 e imprime o resultado no console.
 
-B) O código avalia a expressão booleana, imprime o resultado `true`, calcula a soma dos números de 1 a 5 e imprime o resultado no console.
+<b>B) O código avalia a expressão booleana, imprime o resultado `true`, calcula a soma dos números de 1 a 5 e imprime o resultado no console.</b>
 
 C) O código avalia a expressão booleana, imprime o resultado `true` e verifica se o número 5 está presente na lista de números.
 
 D) O código avalia a expressão booleana, imprime o resultado `false` e ordena a lista de números em ordem crescente.
 
-
+<b>Alternativa correta: b)</b>
 ______
 
 **2)** Analise as funções calcularOrcamento() e calcularOrcamento2(). Num cenário em que a lista gastos fosse incializada como var gastos = [3600, 950, 620, 38] em ambas funções.
@@ -106,12 +106,13 @@ Escolha a opção que responde corretamente qual seria a saída após a execuç�
 
 A) As funções calcularOrcamento() e calcularOrcamento2() teriam a mesma saída: 'Seu saldo é negativo de -1050.'
 
-B) A saída de calcularOrcamento() seria: 'Seu saldo é negativo de -1050.' e a de calcularOrcamento2() seria: 'Seu saldo é negativo de -100.'
+<b>B) A saída de calcularOrcamento() seria: 'Seu saldo é negativo de -1050.' e a de calcularOrcamento2() seria: 'Seu saldo é negativo de -100.'</b>
 
 C) A saída de calcularOrcamento() seria: 'Seu saldo é negativo de -100.' e a de calcularOrcamento2() seria: 'Seu saldo é negativo de -1050.'
 
 D) As funções calcularOrcamento() e calcularOrcamento2() teriam a mesma saída: 'Seu saldo é negativo de -100.'
 
+<b>Alternativa correta: b)</b>
 ______
 
 **3)** Considere o seguinte trecho de código em JavaScript:
@@ -137,9 +138,9 @@ B) O código verifica se o número é par ou ímpar. Se for par, exibe a mensage
 
 C) O código verifica se o número é par, ímpar ou divisível por 3. Se for par, exibe a mensagem "O número é par!". Se for divisível por 3, exibe a mensagem "O número é divisível por 3!". Se for ímpar, exibe a mensagem "O número é ímpar e não é divisível por 3!".
 
-D) O código verifica se o número é par, se é divisível por 3 ou se é ímpar. Se for par, exibe a mensagem "O número é par!". Se for divisível por 3 (e não for par), exibe a mensagem "O número é divisível por 3!". Se for ímpar (e não for divisível por 3), exibe a mensagem "O número é ímpar e não é divisível por 3!".
+<b>D) O código verifica se o número é par, se é divisível por 3 ou se é ímpar. Se for par, exibe a mensagem "O número é par!". Se for divisível por 3 (e não for par), exibe a mensagem "O número é divisível por 3!". Se for ímpar (e não for divisível por 3), exibe a mensagem "O número é ímpar e não é divisível por 3!".</b>
 
-
+<b>Alternativa correta: d)</b>
 ______
 
 **4)** Qual será o resultado impresso no console após a execução desse código?
@@ -201,7 +202,7 @@ Compra 3 aprovada. Saldo restante: 400
 Compra 4 negada. Saldo insuficiente e limite de crédito excedido.
 
 
-D)
+<b>D)
 
 Compra 1 aprovada. Saldo restante: 800
 
@@ -211,8 +212,9 @@ Compra 3 aprovada com limite de crédito. Saldo restante: 200
 
 Compra 4 negada. Saldo insuficiente e limite de crédito excedido.
 
-Compra 5 negada. Saldo insuficiente e limite de crédito excedido.
+Compra 5 negada. Saldo insuficiente e limite de crédito excedido.</b>
 
+<b>Alternativa correta: d)</b>
 ______
 
 **5)** Qual é o principal ciclo de vida de um jogo em Phaser.js?
@@ -221,11 +223,13 @@ Escolha a opção que responde corretamente:
 
 A) Setup -> Update -> Draw
 
-B) Preload -> Create -> Update
+<b>B) Preload -> Create -> Update</b>
 
 C) Load -> Initialize -> Render
 
 D) Begin -> Play -> End
+
+<b>Alternativa correta: b)</b>
 ______
 
 **6)** Qual é o objetivo principal do módulo Arcade Physics em Phaser.js?
@@ -234,11 +238,13 @@ Escolha a opção que responde corretamente:
 
 A) Renderizar gráficos 3D para jogos em HTML5.
 
-B) Simular interações físicas realistas, como colisões e movimentos, em jogos 2D.
+<b>B) Simular interações físicas realistas, como colisões e movimentos, em jogos 2D.</b>
 
 C) Criar efeitos de áudio para melhorar a experiência do usuário em jogos.
 
 D) Gerenciar a lógica do jogo e a sincronização de eventos em jogos multiplayer.
+
+<b>Alternativa correta: b)</b>
 
 ______
 
