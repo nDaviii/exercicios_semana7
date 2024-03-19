@@ -254,6 +254,18 @@ ______
 ![Uma imagem](assets/image.png)
 ______
 
+```
+idade = prompt('insira sua idade')
+
+se idade < 16  {
+  prompt('Não pode votar!')
+} senão, se 16 > idade > 18 ou idade > 70 ou analfabeto = true {
+  prompt('Pode votar! O voto é facultativo')
+} senão {
+  prompt('O voto é obrigatório!')<br>
+}
+```
+
 **8)** Considere a implementação da classe base FormaGeometrica em um sistema de modelagem de formas geométricas. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Retangulo e Circulo, que herdam da classe FormaGeometrica, adicionando atributos específicos e métodos para calcular a área de um retângulo e de um círculo, respectivamente.
 
 ```
@@ -267,12 +279,54 @@ Classe FormaGeometrica:
     Método CalcularArea():
         # Implementação genérica para cálculo de área, a ser sobrescrita pelas subclasses.
 
+Classe Retangulo extends FormaGeometrica:
+    Atributos:
+        - base
+        - altura
+        - area
+
+    Método Construtor(cor, base, altura):
+        super(cor)
+
+        this.base = base
+        this.altura = altura
+
+    Método CalcularArea():
+        this.area = base x altura
+
+Classe Circulo extends FormaGeometrica:
+    Atributos:
+        - raio
+        - centro
+        - area
+
+    Método Construtor(cor, raio):
+        super(cor)
+
+        this.raio = raio
+
+    Método CalcularArea():
+        this.area = pi x raio²
 ```
 
 ______
 
 **9)** Você foi contratado(a) como estagiário(a) da Tesla e está participando do desenvolvimento de um programa para simular o desempenho de um carro elétrico em uma corrida. Seu objetivo é determinar em quantos minutos o carro levará para completar uma determinada distância, levando em consideração uma velocidade inicial e uma taxa de aceleração constante. No entanto, você deseja garantir que o carro não exceda uma velocidade máxima nem que a corrida demore mais do que um tempo máximo. Implemente a lógica dessa simulação em pseudocódigo.
 
+```
+
+  tempo = 0
+  tempoMaximo = 15
+  velocidade = 100
+  velocidadeMaxima = 200
+  distancia = 0
+  aceleracao = 10
+
+  Enquanto velocidade <= velocidadeMaxima && tempo <= tempoMaximo
+    distancia += velocidade * tempo + aceleracao * (tempo^2)/2
+    tempo += 1
+
+```
 
 
 ______
