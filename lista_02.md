@@ -259,7 +259,7 @@ idade = prompt('insira sua idade')
 
 se idade < 16  {
   prompt('Não pode votar!')
-} senão, se 16 > idade > 18 ou idade > 70 ou analfabeto = true {
+} senão, se 16 >= idade > 18 ou idade > 70 ou analfabeto = true { //acrescenta de além do pseudocódigo somente o fator de que o voto é facultativo também, em caso de idade maior que 70 anos e analfabetismo
   prompt('Pode votar! O voto é facultativo')
 } senão {
   prompt('O voto é obrigatório!')<br>
@@ -315,16 +315,45 @@ ______
 
 ```
 
-  tempo = 0
-  tempoMaximo = 15
-  velocidade = 100
-  velocidadeMaxima = 200
-  distancia = 0
-  aceleracao = 10
+\\ faz a entrada das variáveis
+Velocidade0 <- prompt("Digite a velocidade inicial do carro em m/s: ")
+Aceleracao <- prompt("Digite a taxa de aceleração do carro em m/s^2: ")
+Distancia <- prompt("Digite a distância da corrida em metros: ")
+VelocidadeMax <- prompt("Digite a velocidade máxima permitida em m/s: ")
+TempoMax <- prompt("Digite o tempo máximo permitido para a corrida em minutos: ")
 
-  Enquanto velocidade <= velocidadeMaxima && tempo <= tempoMaximo
-    distancia += velocidade * tempo + aceleracao * (tempo^2)/2
-    tempo += 1
+# Converter o tempo máximo de minutos pra segundos
+TempoMaxSeg <- TempoMax * 60
+
+\\ define as variáveis de tempo e velocidade e inicializa o tempo no 0 e a velocidade na velocidade inicial coletada
+Tempo <- 0
+Velocidade <- Velocidade0
+
+# Loop para simular o desempenho do carro até a distância ser alcançada ou o tempo máximo ser excedido
+while Distancia > 0 and Tempo < TempoMaxSeg
+    # Calcular a nova velocidade do carro após o intervalo de tempo
+    Velocidade <- Velocidade + Aceleracao * (Tempo / 60)
+    
+    # Verificar se a nova velocidade excede a velocidade máxima permitida
+    if Velocidade > VelocidadeMax
+        Velocidade <- VelocidadeMax  # Limitar a velocidade à velocidade máxima
+        
+    # Calcular a distância percorrida no intervalo de tempo, utilizando a média das velocidades
+    DistanciaPercorrida <- (VelocidadeMax + Velocidade0) * Tempo / 2
+    
+    # Verificar se a distância percorrida é maior que a distância total da corrida
+    if DistanciaPercorrida >= Distancia:
+        Distancia <- 0  # O carro alcançou ou ultrapassou a distância total
+    else:
+        Distancia <- Distancia - DistanciaPercorrida  # Reduzir a distância restante
+        
+    Tempo <- Tempo + 1  # Incrementar o tempo em 1 segundo
+
+# Verificar o resultado da simulação
+if Distancia <= 0:
+    print("O carro completou a corrida da simulação em ", Tempo / 60, " minutos.")
+else:
+    print("O carro não conseguiu completar a corrida dentro do tempo máximo permitido.")
 
 ```
 
@@ -357,4 +386,33 @@ matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 matrizSoma <- SomaDeMatrizes(matrizA, matrizB)
 Escrever("Soma das matrizes:")
 ImprimirMatriz(matrizSoma)
+
+Função MultiplicacaoDeMatrizes(matrizA, matrizB):
+    # Verifica se o número de colunas de matrizA é igual ao número de linhas de matrizB
+    Se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:
+        Retornar "As matrizes não podem ser multiplicadas. O número de colunas de matrizA não é igual ao número de linhas de matrizB."
+    Senão:
+        linhasA <- tamanho(matrizA)
+        colunasA <- tamanho(matrizA[0])
+        colunasB <- tamanho(matrizB[0])
+        matrizResultado <- novaMatriz(linhasA, colunasB)
+
+        # Loop para percorrer cada elemento da matriz resultado
+        Para i de 0 até linhasA-1 faça:
+            Para j de 0 até colunasB-1 faça:
+                soma <- 0
+                # Loop para multiplicar e somar os elementos correspondentes das matrizes A e B
+                Para k de 0 até colunasA-1 faça:
+                    soma <- soma + (matrizA[i][k] * matrizB[k][j])
+                matrizResultado[i][j] <- soma
+
+        Retornar matrizResultado
+
+# Exemplo de uso da função
+matrizA <- [[1, 2, 3], [4, 5, 6]]
+matrizB <- [[7, 8], [9, 10], [11, 12]]
+
+matrizProduto <- MultiplicacaoDeMatrizes(matrizA, matrizB)
+Escrever("Produto das matrizes:")
+ImprimirMatriz(matrizProduto)
 ```
