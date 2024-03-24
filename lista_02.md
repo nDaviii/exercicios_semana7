@@ -255,15 +255,15 @@ ______
 ______
 
 ```
-idade = prompt('insira sua idade')
+idade <- entrada('insira sua idade')
 
-se idade < 16  {
-  prompt('Não pode votar!')
-} senão, se 16 >= idade > 18 ou idade > 70 ou analfabeto = true { //acrescenta de além do pseudocódigo somente o fator de que o voto é facultativo também, em caso de idade maior que 70 anos e analfabetismo
-  prompt('Pode votar! O voto é facultativo')
-} senão {
-  prompt('O voto é obrigatório!')<br>
-}
+se idade < 16:
+  imprima('Não pode votar!')
+senão, se 16 >= idade > 18 ou idade > 70 ou analfabeto = true: //acrescenta de além do pseudocódigo somente o fator de que o voto é facultativo também, em caso de idade maior que 70 anos e analfabetismo
+  imprima('Pode votar! O voto é facultativo')
+senão:
+  imprima('O voto é obrigatório!')
+
 ```
 
 **8)** Considere a implementação da classe base FormaGeometrica em um sistema de modelagem de formas geométricas. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Retangulo e Circulo, que herdam da classe FormaGeometrica, adicionando atributos específicos e métodos para calcular a área de um retângulo e de um círculo, respectivamente.
@@ -279,34 +279,34 @@ Classe FormaGeometrica:
     Método CalcularArea():
         # Implementação genérica para cálculo de área, a ser sobrescrita pelas subclasses.
 
-Classe Retangulo extends FormaGeometrica:
+Classe Retangulo herdaDe FormaGeometrica:
     Atributos:
         - base
         - altura
         - area
 
     Método Construtor(cor, base, altura):
-        super(cor)
+        herdaDaClasseMãe(cor)
 
-        this.base = base
-        this.altura = altura
+        esse.base = base
+        esse.altura = altura
 
     Método CalcularArea():
-        this.area = base x altura
+        esse.area = base x altura
 
-Classe Circulo extends FormaGeometrica:
+Classe Circulo herdaDe FormaGeometrica:
     Atributos:
         - raio
         - centro
         - area
 
     Método Construtor(cor, raio):
-        super(cor)
+        herdaDaClasseMãe(cor)
 
-        this.raio = raio
+        esse.raio = raio
 
     Método CalcularArea():
-        this.area = pi x raio²
+        esse.area = pi x raio²
 ```
 
 ______
@@ -315,45 +315,45 @@ ______
 
 ```
 
-\\ faz a entrada das variáveis
-Velocidade0 <- prompt("Digite a velocidade inicial do carro em m/s: ")
-Aceleracao <- prompt("Digite a taxa de aceleração do carro em m/s^2: ")
-Distancia <- prompt("Digite a distância da corrida em metros: ")
-VelocidadeMax <- prompt("Digite a velocidade máxima permitida em m/s: ")
-TempoMax <- prompt("Digite o tempo máximo permitido para a corrida em minutos: ")
+# faz a entrada das variáveis
+Velocidade0 <- entrada("Velocidade inicial: ")
+Aceleracao <- entrada("Taxa de aceleração: ")
+Distancia <- entrada("Distância da corrida: ")
+VelocidadeMax <- entrada("Velocidade máxima permitida: ")
+TempoMax <- entrada("Tempo máximo em minutos permitido para a corrida: ")
 
-# Converter o tempo máximo de minutos pra segundos
+# converter o tempo máximo de minutos pra segundos (fica melhor pro contador)
 TempoMaxSeg <- TempoMax * 60
 
-\\ define as variáveis de tempo e velocidade e inicializa o tempo no 0 e a velocidade na velocidade inicial coletada
+# define as variáveis de tempo e velocidade e inicializa o tempo no 0 e a velocidade na velocidade inicial coletada
 Tempo <- 0
 Velocidade <- Velocidade0
 
-# Loop para simular o desempenho do carro até a distância ser alcançada ou o tempo máximo ser excedido
-while Distancia > 0 and Tempo < TempoMaxSeg
-    # Calcular a nova velocidade do carro após o intervalo de tempo
+# iteração para simular o desempenho do carro até a distância ser alcançada ou o tempo máximo ser excedido
+enquanto Distancia > 0 e Tempo < TempoMaxSeg
+    # calcula a nova velocidade do carro após o tempo que passou
     Velocidade <- Velocidade + Aceleracao * (Tempo / 60)
     
-    # Verificar se a nova velocidade excede a velocidade máxima permitida
-    if Velocidade > VelocidadeMax
-        Velocidade <- VelocidadeMax  # Limitar a velocidade à velocidade máxima
+    # checa a nova velocidade excede a velocidade máxima permitida
+    se Velocidade > VelocidadeMax
+        Velocidade <- VelocidadeMax  # limita a velocidade à velocidade máxima
         
-    # Calcular a distância percorrida no intervalo de tempo, utilizando a média das velocidades
+    # calcula a distância percorrida no intervalo de tempo, utilizando a média das velocidades
     DistanciaPercorrida <- (VelocidadeMax + Velocidade0) * Tempo / 2
     
-    # Verificar se a distância percorrida é maior que a distância total da corrida
-    if DistanciaPercorrida >= Distancia:
-        Distancia <- 0  # O carro alcançou ou ultrapassou a distância total
-    else:
+    # verifica se a distância percorrida é maior que a distância total da corrida
+    se DistanciaPercorrida > Distancia:
+        Distancia <- 0  # O carro alcançou ou ultrapassou a distância total:
+    senão:
         Distancia <- Distancia - DistanciaPercorrida  # Reduzir a distância restante
         
-    Tempo <- Tempo + 1  # Incrementar o tempo em 1 segundo
+    Tempo <- Tempo + 1  # Aumentar o tempo em 1 segundo
 
-# Verificar o resultado da simulação
-if Distancia <= 0:
-    print("O carro completou a corrida da simulação em ", Tempo / 60, " minutos.")
-else:
-    print("O carro não conseguiu completar a corrida dentro do tempo máximo permitido.")
+# checa o resultado da simulação
+se Distancia <= 0:
+    print("O carro completou a corrida da simulação em ", Tempo / 60 # divide por 60 pra converter de volta pra minutos, " minutos.")
+senão:
+    print("O carro não conseguiu completar a corrida dentro do tempo máximo permitido.") # o tempo chegou no tempo máx e a distância não foi percorrida
 
 ```
 
@@ -364,7 +364,7 @@ ______
 
 ```
 Função SomaDeMatrizes(matrizA, matrizB):
-    # Verifica se as duas matrizes têm o mesmo número de linhas e colunas
+    # verifica se as duas matrizes têm o mesmo número de linhas e colunas
     Se tamanho(matrizA) ≠ tamanho(matrizB) então:
         Retornar "As matrizes não podem ser somadas. Elas têm dimensões diferentes."
     Senão:
@@ -372,14 +372,14 @@ Função SomaDeMatrizes(matrizA, matrizB):
         colunas <- tamanho(matrizA[0]) # Considerando que todas as linhas têm o mesmo número de colunas
         matrizResultado <- novaMatriz(linhas, colunas)
 
-        # Loop para percorrer cada elemento das matrizes e calcular a soma
+        # iteração para percorrer cada elemento das matrizes e calcular a soma
         Para i de 0 até linhas-1 faça:
             Para j de 0 até colunas-1 faça:
                 matrizResultado[i][j] <- matrizA[i][j] + matrizB[i][j]
 
         Retornar matrizResultado
 
-# Exemplo de uso da função
+# exemplo de uso da função
 matrizA <- [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 
@@ -387,32 +387,34 @@ matrizSoma <- SomaDeMatrizes(matrizA, matrizB)
 Escrever("Soma das matrizes:")
 ImprimirMatriz(matrizSoma)
 
-Função MultiplicacaoDeMatrizes(matrizA, matrizB):
-    # Verifica se o número de colunas de matrizA é igual ao número de linhas de matrizB
-    Se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:
-        Retornar "As matrizes não podem ser multiplicadas. O número de colunas de matrizA não é igual ao número de linhas de matrizB."
-    Senão:
+// função para criar uma nova matriz com dimensões especificadas
+função criarMatriz(linhas, colunas):
+    matriz <- novaMatriz(linhas)
+    para i de 0 até linhas-1 faça:
+        matriz[i] <- novaMatriz(colunas).preencher(0)
+    retornar matriz
+
+função multiplicacaoDeMatrizes(matrizA, matrizB):
+    // verifica se o número de colunas de matrizA é igual ao número de linhas de matrizB
+    se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:
+        retornar "as matrizes não podem ser multiplicadas. o número de colunas de matrizA não é igual ao número de linhas de matrizB."
+    senão:
         linhasA <- tamanho(matrizA)
         colunasA <- tamanho(matrizA[0])
         colunasB <- tamanho(matrizB[0])
-        matrizResultado <- novaMatriz(linhasA, colunasB)
+        matrizResultado <- criarMatriz(linhasA, colunasB)
 
-        # Loop para percorrer cada elemento da matriz resultado
-        Para i de 0 até linhasA-1 faça:
-            Para j de 0 até colunasB-1 faça:
+        // iteração do tipo for para percorrer cada elemento da matriz resultado
+        para i de 0 até linhasA-1 faça:
+            para j de 0 até colunasB-1 faça:
                 soma <- 0
-                # Loop para multiplicar e somar os elementos correspondentes das matrizes A e B
-                Para k de 0 até colunasA-1 faça:
-                    soma <- soma + (matrizA[i][k] * matrizB[k][j])
+                // variáveis no escopo local da função para armazenar os elementos das matrizes
+                elemento_matrizA <- matrizA[i]
+                elemento_matrizB <- matrizB[0]
+                // iteração para multiplicar e somar os elementos correspondentes das matrizes A e B
+                para k de 0 até colunasA-1 faça:
+                    soma <- soma + (elemento_matrizA[k] * elemento_matrizB[j])
+                    elemento_matrizB <- matrizB[k + 1]  // avançar para o próximo elemento da coluna de matrizB
                 matrizResultado[i][j] <- soma
 
-        Retornar matrizResultado
-
-# Exemplo de uso da função
-matrizA <- [[1, 2, 3], [4, 5, 6]]
-matrizB <- [[7, 8], [9, 10], [11, 12]]
-
-matrizProduto <- MultiplicacaoDeMatrizes(matrizA, matrizB)
-Escrever("Produto das matrizes:")
-ImprimirMatriz(matrizProduto)
-```
+        retornar matrizResultado
