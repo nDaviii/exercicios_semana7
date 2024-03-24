@@ -271,42 +271,50 @@ senão:
 ```
 Classe FormaGeometrica:
     Atributos:
-        - cor
+        - cor  # Cor da forma geométrica
 
     Método Construtor(cor):
-        Define o valor do atributo cor com o valor passado como parâmetro.
+        # define o valor do atributo cor com o valor passado como parâmetro
+        DefineCor(cor)
 
     Método CalcularArea():
-        # Implementação genérica para cálculo de área, a ser sobrescrita pelas subclasses.
+        # implementação genérica para cálculo de área, a ser sobrescrita pelas subclasses.
 
 Classe Retangulo herdaDe FormaGeometrica:
-    Atributos:
-        - base
-        - altura
-        - area
+    Atributos: # propriedades do retângulo
+        - base  
+        - altura  
+        - area  
 
     Método Construtor(cor, base, altura):
-        herdaDaClasseMãe(cor)
+        # chama o construtor da classe pai para definir a cor
+        ChamarConstrutorDaClassePai(cor)
 
+        # define os valores dos atributos base e altura
         esse.base = base
         esse.altura = altura
 
     Método CalcularArea():
+        # calcula a área do retângulo multiplicando a base pela altura
         esse.area = base x altura
 
 Classe Circulo herdaDe FormaGeometrica:
     Atributos:
-        - raio
-        - centro
-        - area
+        - raio  # raio do círculo
+        - centro  # centro do círculo
+        - area  # área do círculo
 
     Método Construtor(cor, raio):
-        herdaDaClasseMãe(cor)
+        # chama o construtor da classe pai para definir a cor
+        ChamarConstrutorDaClassePai(cor)
 
+        # define o valor do atributo raio
         esse.raio = raio
 
     Método CalcularArea():
+        # calcula a área do círculo utilizando a fórmula πr²
         esse.area = pi x raio²
+
 ```
 
 ______
@@ -387,7 +395,9 @@ matrizSoma <- SomaDeMatrizes(matrizA, matrizB)
 Escrever("Soma das matrizes:")
 ImprimirMatriz(matrizSoma)
 
-// função para criar uma nova matriz com dimensões especificadas
+
+
+# função para criar uma nova matriz com dimensões especificadas
 função criarMatriz(linhas, colunas):
     matriz <- novaMatriz(linhas)
     para i de 0 até linhas-1 faça:
@@ -395,7 +405,7 @@ função criarMatriz(linhas, colunas):
     retornar matriz
 
 função multiplicacaoDeMatrizes(matrizA, matrizB):
-    // verifica se o número de colunas de matrizA é igual ao número de linhas de matrizB
+    # verifica se o número de colunas de matrizA é igual ao número de linhas de matrizB
     se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:
         retornar "as matrizes não podem ser multiplicadas. o número de colunas de matrizA não é igual ao número de linhas de matrizB."
     senão:
@@ -404,17 +414,17 @@ função multiplicacaoDeMatrizes(matrizA, matrizB):
         colunasB <- tamanho(matrizB[0])
         matrizResultado <- criarMatriz(linhasA, colunasB)
 
-        // iteração do tipo for para percorrer cada elemento da matriz resultado
+        # iteração do tipo for para percorrer cada elemento da matriz resultado
         para i de 0 até linhasA-1 faça:
             para j de 0 até colunasB-1 faça:
                 soma <- 0
-                // variáveis no escopo local da função para armazenar os elementos das matrizes
+                # variáveis no escopo local da função para armazenar os elementos das matrizes
                 elemento_matrizA <- matrizA[i]
                 elemento_matrizB <- matrizB[0]
-                // iteração para multiplicar e somar os elementos correspondentes das matrizes A e B
+                # iteração para multiplicar e somar os elementos correspondentes das matrizes A e B
                 para k de 0 até colunasA-1 faça:
                     soma <- soma + (elemento_matrizA[k] * elemento_matrizB[j])
-                    elemento_matrizB <- matrizB[k + 1]  // avançar para o próximo elemento da coluna de matrizB
+                    elemento_matrizB <- matrizB[k + 1]  # avançar para o próximo elemento da coluna de matrizB
                 matrizResultado[i][j] <- soma
 
         retornar matrizResultado
