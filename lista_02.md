@@ -330,7 +330,7 @@ Distancia <- entrada("Distância da corrida: ")
 VelocidadeMax <- entrada("Velocidade máxima permitida: ")
 TempoMax <- entrada("Tempo máximo em minutos permitido para a corrida: ")
 
-# converter o tempo máximo de minutos pra segundos (fica melhor pro contador)
+# converte o tempo máximo de minutos pra segundos (fica melhor pro contador)
 TempoMaxSeg <- TempoMax * 60
 
 # define as variáveis de tempo e velocidade e inicializa o tempo no 0 e a velocidade na velocidade inicial coletada
@@ -342,14 +342,14 @@ enquanto Distancia > 0 e Tempo < TempoMaxSeg
     # calcula a nova velocidade do carro após o tempo que passou
     Velocidade <- Velocidade + Aceleracao * (Tempo / 60)
     
-    # checa a nova velocidade excede a velocidade máxima permitida
+    # checa se a nova velocidade excede a velocidade máxima permitida
     se Velocidade > VelocidadeMax
         Velocidade <- VelocidadeMax  # limita a velocidade à velocidade máxima
         
     # calcula a distância percorrida no intervalo de tempo, utilizando a média das velocidades
     DistanciaPercorrida <- (VelocidadeMax + Velocidade0) * Tempo / 2
     
-    # verifica se a distância percorrida é maior que a distância total da corrida
+    # checa se a distância percorrida é maior que a distância total da corrida
     se DistanciaPercorrida > Distancia:
         Distancia <- 0  # O carro alcançou ou ultrapassou a distância total:
     senão:
@@ -373,26 +373,26 @@ ______
 ```
 Função SomaDeMatrizes(matrizA, matrizB):
     # verifica se as duas matrizes têm o mesmo número de linhas e colunas
-    Se tamanho(matrizA) ≠ tamanho(matrizB) então:
+    se tamanho(matrizA) ≠ tamanho(matrizB):
         Retornar "As matrizes não podem ser somadas. Elas têm dimensões diferentes."
-    Senão:
+    senão:
         linhas <- tamanho(matrizA)
         colunas <- tamanho(matrizA[0]) # Considerando que todas as linhas têm o mesmo número de colunas
         matrizResultado <- novaMatriz(linhas, colunas)
 
         # iteração para percorrer cada elemento das matrizes e calcular a soma
-        Para i de 0 até linhas-1 faça:
-            Para j de 0 até colunas-1 faça:
+        para i de 0 até linhas-1 faça:
+            para j de 0 até colunas-1 faça:
                 matrizResultado[i][j] <- matrizA[i][j] + matrizB[i][j]
 
-        Retornar matrizResultado
+        retornar matrizResultado
 
 # exemplo de uso da função
 matrizA <- [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 
 matrizSoma <- SomaDeMatrizes(matrizA, matrizB)
-Escrever("Soma das matrizes:")
+imprima("Soma das matrizes:")
 ImprimirMatriz(matrizSoma)
 
 
